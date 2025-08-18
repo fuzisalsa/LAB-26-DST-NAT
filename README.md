@@ -1,8 +1,7 @@
 # LAB-26-DST-NAT
 tanggal 17 Agustus 2025
 
-![m](<img width="657" height="309" alt="image" src="https://github.com/user-attachments/assets/23ee2aa5-1922-417c-8619-0cfc90ad4a63" />
-)
+![m](DESTure.PNG)
 
 seperti yang kita baca, PC1 di jaringan kiri meminta agar bisa   
 akses Web Server 2 lewat NAT di Router, dan Begitu sebaliknya.
