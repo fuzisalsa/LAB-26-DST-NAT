@@ -31,21 +31,21 @@ akses Web Server 2 lewat NAT di Router, dan Begitu sebaliknya.
 **ROUTER 2**
 1. Setting IP di router 1 dan DHCP Client dulu.
 
-      /ip address
-      add address=192.168.20.1/24 interface=eth2 
-      add address=192.168.200.1/28 interface=eth3 
+             /ip address   
+             add address=192.168.20.1/24 interface=eth2   
+             add address=192.168.200.1/28 interface=eth3    
 
 2. Setting NAT Masquerade agar bisa akses internet
 
-    /ip firewall nat add chain=srcnat out-interface=eth1 action=masquerade
+           /ip firewall nat add chain=srcnat out-interface=eth1 action=masquerade
 
 3. Add DTS NAT agar PC bisa akses WebServer1.
 
-     /ip firewall nat add chain=dstnat in-interface=eth1 protocol=tcp dst-port=80 action=dst-nat to-addresses=192.168.100.100 to-ports=80
+            /ip firewall nat add chain=dstnat in-interface=eth1 protocol=tcp dst-port=80 action=dst-nat to-addresses=192.168.100.100 to-ports=80
 
 4. Tambahkan juga Filter firewalls forward untuk izin forward ke webserver1
 
-    /ip firewall filter add chain=forward protocol=tcp dst-port=80 dst-address=192.168.100.100 action=accept
+           /ip firewall filter add chain=forward protocol=tcp dst-port=80 dst-address=192.168.100.100 action=accept
 
 # Pengujian
 Dari Browser PC1, buka dan ketik
